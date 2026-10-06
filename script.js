@@ -69,3 +69,18 @@
   dots.forEach(function(d,k){d.addEventListener('click',function(){show(k);start()})});
   start();
 })();
+document.querySelectorAll('.svc-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const rotateX = ((y - r.height / 2) / (r.height / 2)) * -10;
+    const rotateY = ((x - r.width / 2) / (r.width / 2)) * 10;
+    card.style.transform =
+      `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+  });
+});

@@ -225,6 +225,15 @@ html{scroll-padding-top:4rem}
   border-radius:14px;
   padding:1.4rem;
 }
+.svc-card{
+  transition: transform .15s ease-out, box-shadow .3s ease, border-color .3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.svc-card:hover{
+  border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(245,217,139,.25);
+}
 .svc-card svg{
   width:2rem;height:2rem;margin-bottom:.8rem;
   fill:none;stroke:var(--accent);stroke-width:1.6;
@@ -237,3 +246,86 @@ html{scroll-padding-top:4rem}
 @media (max-width:560px){.svc-grid{grid-template-columns:minmax(0,1fr)}}
 
 .ct .lab i{color:var(--accent);margin-right:.45rem;width:1.1em;text-align:center}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin-top: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 16px;
+  background: transparent;
+  border: 2px solid #f5d98b;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: #aaa; }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.contact-form button {
+  padding: 16px;
+  background: #f5d98b;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.contact-form button:hover { transform: scale(1.03); }
+
+.contact-form {
+  order: 1;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 0;
+}
+
+.social-icons {
+  order: 2;
+  flex-wrap: wrap;
+}
+.social-icons { display: flex; gap: 20px; }
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  gap:80px;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 8dvh;
+  font-size: 50px;
+  color: #f5d98b;
+  border: 2px solid #f5d98b;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform .2s, color .2s, background .2s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  background: #f5d98b;
+  color: #000;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
